@@ -1,0 +1,36 @@
+print("Arbitrary Keyword  Arguments")
+
+print(" ")
+
+def test1(*args):
+    return args
+    
+print(type(test1()))
+
+print(test1(1, 2.0, 3j, True, [4], {1 : 1.0}))
+
+def test2(*args, a1):
+    return args,a1
+    
+#print(test2(1,2)) ##error
+print(test2(1, 2, 3, a1 = 1.0))
+
+def test3(a, b, c = 3, d = 4):
+    return a, b, c, d
+    
+# print(test3()) ##error
+
+print(test3(1, 2))
+
+print(test3(1, 2, c = 1.1, d = 1.2))
+
+print("**kwargs")
+
+def test4(**kwargs):
+    return kwargs 
+    
+print(type(test4()))
+
+test4(a = [1, 2], a1 = (1,2))
+
+print(test4(a = [1, 2], a1 = (1,2)))
